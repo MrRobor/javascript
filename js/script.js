@@ -101,7 +101,7 @@ function writeYourGenres() {
 
 // writeYourGenres();
 
-
+/*Объекты*/
 const options = {
 	name: `Akim`,
 	surname: `Serverov`,
@@ -113,6 +113,10 @@ const options = {
 		
 	},
 };
+
+for (let key in options) {
+	console.log(`Значение ${key} имеет свойства ${options[key]}`);
+}
 
 console.log(Object.keys(personalMovieDB).length);
 const {love, bgcolor} = options.colors;
@@ -130,12 +134,8 @@ for (let key in options) {
 	
 }
 
-
+/*Массивы*/
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-// arr.push(9);
-
-// console.log(arr);
 
 arr.forEach(function (number, index, arr) {
 	console.log(`${index}) ${number} это из массива ${arr}`);
@@ -153,12 +153,14 @@ console.log(products.join(`; `));
 console.log(products.sort());
 
 
-
+/*Callback*/
 function learnJS (lang, callback) {
 	console.log(`Я сейчас прохожу курс по ${lang}!`);
 	callback();
 }
 
-learnJS(`Javascript`, function call () {
+function call() {
 	console.log(`Я прошёл этот урок по callback!`);
-});
+}
+
+learnJS(`Javascript`, call);
